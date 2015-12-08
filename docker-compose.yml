@@ -1,0 +1,13 @@
+postgres:
+  image: postgres:9.2.11
+  environment:
+    - POSTGRES_USER=cube3_dev_user
+    - POSTGRES_PASSWORD=password
+    - POSTGRES_DB=cube3_dev
+
+ec-cube3:
+  image: ysaotome/ec-cube3:3.0.0-beta
+  ports:
+    - "80:80"
+  links:
+    - postgres
